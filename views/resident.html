@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Municipal Disaster Alert</title>
+  <meta name="theme-color" content="#c62828">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>MUNICIPAL DISASTER ALERT</h1>
+    <div><span class="who" id="who"></span> <button id="logout">Log out</button></div>
+  </header>
+
+  <main class="wrap">
+    <div id="offline" class="notice offline hidden">You are offline. Showing the last alerts saved on this device.</div>
+
+    <div id="notif-box" class="notice hidden">
+      <div id="notif-text"></div>
+      <button id="notif-btn" class="btn block hidden" type="button">Turn on alert notifications</button>
+    </div>
+    <button id="install-btn" class="btn secondary block hidden" type="button">Install app on this device</button>
+
+    <h2>Current alerts</h2>
+    <section id="current" aria-live="polite"></section>
+
+    <h2>Alert history</h2>
+    <section id="history"></section>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/resident/app.js"></script>
+</body>
+</html>

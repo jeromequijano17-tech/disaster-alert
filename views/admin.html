@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin - Municipal Disaster Alert</title>
+  <meta name="theme-color" content="#1d2327">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>MUNICIPAL DISASTER ALERT</h1>
+    <div><span class="who" id="who"></span> <button id="logout">Log out</button></div>
+  </header>
+
+  <main class="wrap">
+    <div class="tabs" role="tablist">
+      <button id="tab-dashboard" role="tab" aria-selected="true">Dashboard</button>
+      <button id="tab-create" role="tab" aria-selected="false">Create Alert</button>
+      <button id="tab-alerts" role="tab" aria-selected="false">Previous Alerts</button>
+    </div>
+
+    <section id="view-dashboard">
+      <div class="stats">
+        <div class="stat"><b id="s-residents">-</b><span class="muted">Residents</span></div>
+        <div class="stat"><b id="s-alerts">-</b><span class="muted">Alerts sent</span></div>
+        <div class="stat"><b id="s-notified">-</b><span class="muted">With notifications</span></div>
+      </div>
+      <h2>Latest alert</h2>
+      <div id="latest"></div>
+    </section>
+
+    <section id="view-create" class="card hidden">
+      <h2>Create alert</h2>
+      <form id="alert-form" novalidate>
+        <label for="a-type">Disaster type</label>
+        <select id="a-type">
+          <option value="typhoon">Typhoon</option>
+          <option value="flood">Flood</option>
+          <option value="earthquake">Earthquake</option>
+          <option value="landslide">Landslide</option>
+          <option value="fire">Fire</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="a-level">Alert level</label>
+        <select id="a-level">
+          <option value="advisory">Advisory (yellow)</option>
+          <option value="warning">Warning (orange)</option>
+          <option value="emergency">Emergency (red)</option>
+        </select>
+        <div id="level-preview" class="preview" aria-hidden="true"></div>
+
+        <label for="a-title">Title</label>
+        <input id="a-title" type="text" maxlength="150" placeholder="Typhoon Warning" required>
+
+        <label for="a-message">Message</label>
+        <textarea id="a-message" maxlength="2000" placeholder="A typhoon advisory has been issued for the municipality. Residents are advised to stay alert and follow instructions from local authorities." required></textarea>
+
+        <button class="btn block" type="submit" id="send-btn">SEND ALERT</button>
+      </form>
+      <div id="create-msg" class="msg" role="alert"></div>
+    </section>
+
+    <section id="view-alerts" class="hidden"></section>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/admin/app.js"></script>
+</body>
+</html>

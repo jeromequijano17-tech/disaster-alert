@@ -1,0 +1,23 @@
+{
+  "name": "municipal-disaster-alert",
+  "version": "1.0.0",
+  "description": "Municipal Disaster Alert - installable PWA (Node.js, Express, MySQL, vanilla JS)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "create-admin": "node scripts/create-admin.js",
+    "vapid": "npx web-push generate-vapid-keys"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.0",
+    "web-push": "^3.6.7"
+  }
+}
